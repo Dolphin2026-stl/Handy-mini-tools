@@ -9,4 +9,5 @@ Includes:
 - password generator
 - notes (localStorage)
 
-Open index.html to run.
+Click:
+https://dolphin2026-stl.github.io/Handy-mini-tools/
