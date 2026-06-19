@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handy Mini Tools</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🧰 Handy Mini Tools</h1>
+    <p>Simple tools for university life</p>
+  </header>
+
+  <main class="grid">
+
+    <section class="card" id="pomodoro">
+      <h2>Pomodoro Timer</h2>
+      <div class="display" id="timer">25:00</div>
+      <button onclick="startTimer()">Start</button>
+      <button onclick="resetTimer()">Reset</button>
+    </section>
+
+    <section class="card" id="gpa">
+      <h2>GPA Calculator</h2>
+      <input id="grades" placeholder="e.g. 4,3.7,3.3" />
+      <button onclick="calcGPA()">Calculate</button>
+      <div id="gpaResult"></div>
+    </section>
+
+    <section class="card" id="converter">
+      <h2>Unit Converter (km → miles)</h2>
+      <input id="km" placeholder="Kilometers" />
+      <button onclick="convert()">Convert</button>
+      <div id="convertResult"></div>
+    </section>
+
+    <section class="card" id="password">
+      <h2>Password Generator</h2>
+      <button onclick="genPassword()">Generate</button>
+      <div id="passwordResult"></div>
+    </section>
+
+    <section class="card" id="notes">
+      <h2>Quick Notes</h2>
+      <textarea id="notesBox" placeholder="Write something..."></textarea>
+      <button onclick="saveNotes()">Save</button>
+      <button onclick="loadNotes()">Load</button>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
