@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NJU Campus Hub</title>
+  <style>
+    body{
+      margin:0;
+      font-family:Arial;
+      background:#0b1020;
+      color:#eaeaea;
+    }
+
+    header{
+      padding:20px;
+      background:#111a33;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .brand{
+      font-size:20px;
+      font-weight:bold;
+    }
+
+    .btn{
+      background:#4f46e5;
+      color:white;
+      border:none;
+      padding:8px 12px;
+      border-radius:6px;
+      cursor:pointer;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:16px;
+      padding:20px;
+    }
+
+    .card{
+      background:#141c36;
+      padding:16px;
+      border-radius:12px;
+      border:1px solid #263055;
+    }
+
+    input{
+      width:100%;
+      padding:8px;
+      margin-top:8px;
+      border-radius:6px;
+      border:none;
+    }
+
+    .hidden{display:none;}
+
+    .modal{
+      position:fixed;
+      top:0;left:0;right:0;bottom:0;
+      background:rgba(0,0,0,0.6);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .modal-box{
+      background:white;
+      color:black;
+      padding:20px;
+      border-radius:10px;
+      width:320px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="brand">🎓 NJU Campus Hub</div>
+  <button class="btn" onclick="openLogin()">Login</button>
+</header>
+
+<div id="app" class="hidden">
+  <main class="grid">
+    <div class="card">
+      <h3>🏠 Dorm Electricity</h3>
+      <p>Query placeholder (API TBD)</p>
+    </div>
+
+    <div class="card">
+      <h3>📚 Course Info</h3>
+      <p>Curriculum / syllabus query module</p>
+    </div>
+
+    <div class="card">
+      <h3>🏫 Empty Classroom</h3>
+      <p>Real-time room availability (mock)</p>
+    </div>
+
+    <div class="card">
+      <h3>🧰 Tools</h3>
+      <p>Markdown / PDF / Image tools</p>
+    </div>
+
+    <div class="card">
+      <h3>💬 Community</h3>
+      <p>Create posts / chat rooms (mock)</p>
+    </div>
+  </main>
+</div>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal hidden">
+  <div class="modal-box">
+    <h3>NJU Login</h3>
+    <input id="email" placeholder="xxx@smail.nju.edu.cn" />
+    <input id="pwd" type="password" placeholder="password" />
+    <button class="btn" onclick="login()">Login</button>
+    <p id="msg" style="color:red"></p>
+  </div>
+</div>
+
+<script>
+function openLogin(){
+  document.getElementById('loginModal').classList.remove('hidden');
+}
+
+function login(){
+  const email = document.getElementById('email').value;
+  const msg = document.getElementById('msg');
+
+  if(!email.endsWith('@smail.nju.edu.cn')){
+    msg.innerText = 'Only @smail.nju.edu.cn allowed';
+    return;
+  }
+
+  document.getElementById('loginModal').classList.add('hidden');
+  document.getElementById('app').classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>
